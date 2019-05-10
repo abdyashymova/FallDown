@@ -93,7 +93,16 @@ public abstract class Entity
      * @return true if this and the argument entity have overlapping hit boxes.
      * also returns false if one entity has not set a hit box.
      */
-  
+    public boolean entityHit(Entity entity){
+        try{
+            for(Line2D line: hitBox){
+                for(Line2D otherLine: entity.hitBox)
+                    if(line.intersectsLine(otherLine))
+                        return true;
+            }
+        }catch(NullPointerException e) {}	//If one of the entity has not set a hit box, this method returns false.
+        return false;
+    }
 
     /**
      * updates the entity's hit box.
