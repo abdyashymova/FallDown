@@ -144,6 +144,15 @@ public class HighScore {
      * Prints scores to Text File.
      * @throws NullPointerException if any index in scores is null.
      */
+    private void printScores(){
+        try{
+            writer = new PrintWriter("HighScores.txt");
+            for(int i = 0; i < scores.length; i++){
+                writer.println(scores[i]);
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {}
+    }
 
     /**
      * Prints names to Text File
