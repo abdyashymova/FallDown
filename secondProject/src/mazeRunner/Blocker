@@ -45,6 +45,20 @@ public class Blocker
             yPoints[i] =  (IMAGE_SIZE / 2 - r * Math.cos(angle)) + (Math.random() * 20 - 10);
         }
     }
+ private void drawShape(){
+        image = new BufferedImage(IMAGE_SIZE, IMAGE_SIZE, BufferedImage.TYPE_INT_ARGB);
+        shape = new GeneralPath(GeneralPath.WIND_NON_ZERO, size);
+        shape.moveTo(xPoints[0], yPoints[0]);
+        for(int i = 1; i < size; i++)
+            shape.lineTo(xPoints[i], yPoints[i]);
+        shape.closePath();
+        Graphics2D g = (Graphics2D) (image.getGraphics());
+        g.setRenderingHints(ImageResources.AA);
+        g.setColor(Color.BLUE);
+        g.fill(shape);
+        g.dispose();
+
+    }
 
 
 
