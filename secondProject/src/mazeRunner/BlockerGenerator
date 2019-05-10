@@ -15,7 +15,15 @@ public class BlockerGenerator {
         this.numBlockers = numBlockers;
         generateBlockers();
     }
+ private void generateBlockers(){
+        while (currentBlockers < numBlockers && attempts < 100000){
+            Integer[] prospectiveLocation = new Integer[2];
+            prospectiveLocation[0] = new Integer((int) (Math.random() * 930 + 100));
+            prospectiveLocation[1] = new Integer((int) (Math.random() * 720 - 100));
+            checkLocationLegal(prospectiveLocation);
+        }
 
+    }
 
     /**
      * Ensures that the new location of a blocker is not near any other blockers.
