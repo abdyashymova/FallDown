@@ -10,7 +10,11 @@ public class BlockerGenerator {
     private int currentBlockers = 0;		//Blockers already created.
     private int attempts = 0;               //generator eventually gives up if creating all the blockers seems impossible
 
-  
+    public BlockerGenerator(ArrayList<Blocker> blockers, int numBlockers){
+        this.blockers    = blockers;
+        this.numBlockers = numBlockers;
+        generateBlockers();
+    }
 
 
     /**
