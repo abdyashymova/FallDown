@@ -10,7 +10,7 @@ public class PlayFallDown extends JFrame
 		pack();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-	}com
+	}
 
 	public static void main(String[] args)
 	{
